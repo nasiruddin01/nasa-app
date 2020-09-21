@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <search></search>
   </div>
 </template>
+
+<script>
+import Search from './components/search.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Search
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
