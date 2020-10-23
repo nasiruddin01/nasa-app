@@ -1,5 +1,7 @@
 # nasa-app
+This site is build in vue.js
 
+Site live link: https://nasa-appbd.netlify.app
 ## Project setup
 ```
 npm install
