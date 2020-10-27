@@ -6,7 +6,11 @@
       <button class="btn">Submit</button>
     </form>
     <div class="container" v-if="results">
-      <div class="sub-container" v-for="(result, index) in results" :key="index">
+      <div
+        class="sub-container"
+        v-for="(result, index) in results"
+        :key="index"
+      >
         <img v-bind:src="result.links[0].href" />
       </div>
     </div>
@@ -24,6 +28,9 @@ export default {
       query: "",
       results: ""
     };
+  },
+  mounted() {
+    this.getResult("moon");
   },
   methods: {
     getResult(query) {
@@ -97,6 +104,27 @@ export default {
         margin-bottom: 18px;
         border: 2px solid #00aeff;
         border-radius: 4px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .search {
+    margin: auto;
+    h2 {
+      font-size: 1rem;
+    }
+    p {
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      .sub-container {
+        img {
+          width: 90%;
+        }
       }
     }
   }
